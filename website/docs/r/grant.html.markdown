@@ -11,7 +11,9 @@ description: |-
 The ``mysql_grant`` resource creates and manages privileges given to
 a user on a MySQL server.
 
-## Granting Privileges to a User
+## Examples 
+
+### Granting Privileges to a User
 
 ```hcl
 resource "mysql_user" "jdoe" {
@@ -28,7 +30,7 @@ resource "mysql_grant" "jdoe" {
 }
 ```
 
-## Granting Privileges to a Role
+### Granting Privileges to a Role
 
 ```hcl
 resource "mysql_role" "developer" {
@@ -42,7 +44,7 @@ resource "mysql_grant" "developer" {
 }
 ```
 
-## Adding a Role to a User
+### Adding a Role to a User
 
 ```hcl
 resource "mysql_user" "jdoe" {

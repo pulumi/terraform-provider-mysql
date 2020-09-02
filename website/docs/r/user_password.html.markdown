@@ -12,7 +12,7 @@ user on a MySQL server.
 
 ~> **NOTE on MySQL Passwords:** This resource conflicts with the `password` 
    argument for `mysql_user`. This resource uses PGP encryption to avoid 
-   storing unencrypted passwords in Terraform state.
+   storing unencrypted passwords in the provider state.
    
 ~> **NOTE on How Passwords are Created:** This resource **automatically**
    generates a **random** password. The password will be a random UUID.
@@ -30,10 +30,6 @@ resource "mysql_user_password" "jdoe" {
 }
 ```
 
-You can rotate passwords by running `terraform taint mysql_user_password.jdoe`. 
-The next time Terraform applies a new password will be generated and the user's
-password will be updated accordingly.
-
 ## Argument Reference
 The following arguments are supported:
 
@@ -49,4 +45,4 @@ The following additional attributes are exported:
 * `encrypted_password` - The encrypted password, base64 encoded.
 
 ~> **NOTE:** The encrypted password may be decrypted using the command line,
-   for example: `terraform output encrypted_password | base64 --decode | keybase pgp decrypt`.
+   for example:  `output | base64 --decode | keybase pgp decrypt`.

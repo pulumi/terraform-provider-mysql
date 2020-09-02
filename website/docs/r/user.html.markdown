@@ -11,12 +11,9 @@ description: |-
 The ``mysql_user`` resource creates and manages a user on a MySQL
 server.
 
-~> **Note:** The password for the user is provided in plain text, and is
-obscured by an unsalted hash in the state
-[Read more about sensitive data in state](/docs/state/sensitive-data.html).
-Care is required when using this resource, to avoid disclosing the password.
-
-## Example Usage
+## Examples
+ 
+### Basic Usage
 
 ```hcl
 resource "mysql_user" "jdoe" {
@@ -26,7 +23,7 @@ resource "mysql_user" "jdoe" {
 }
 ```
 
-## Example Usage with an Authentication Plugin
+### Example Usage with an Authentication Plugin
 
 ```hcl
 resource "mysql_user" "nologin" {

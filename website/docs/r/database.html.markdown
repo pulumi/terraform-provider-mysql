@@ -11,12 +11,6 @@ description: |-
 The ``mysql_database`` resource creates and manages a database on a MySQL
 server.
 
-~> **Caution:** The ``mysql_database`` resource can completely delete your
-database just as easily as it can create it. To avoid costly accidents,
-consider setting
-[``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy)
-on your database resources as an extra safety measure.
-
 ## Example Usage
 
 ```hcl
@@ -44,7 +38,7 @@ The following arguments are supported:
 
 Note that the defaults for character set and collation above do not respect
 any defaults set on the MySQL server, so that the configuration can be set
-appropriately even though Terraform cannot see the server-level defaults. If
+appropriately even though this provider cannot see the server-level defaults. If
 you wish to use the server's defaults you must consult the server's
 configuration and then set the ``default_character_set`` and
 ``default_collation`` to match.
