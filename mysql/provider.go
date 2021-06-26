@@ -67,7 +67,7 @@ func Provider() terraform.ResourceProvider {
 					"ALL_PROXY",
 					"all_proxy",
 				}, nil),
-				ValidateFunc: validation.StringMatch(regexp.MustCompile("^socks5h?://.*:\\d+$"), "The proxy URL is not a valid socks url."),
+				ValidateFunc: validation.StringMatch(regexp.MustCompile("^(socks5h?://.*:\\d+)?$"), "The proxy URL is not a valid socks url."),
 			},
 
 			"tls": {
